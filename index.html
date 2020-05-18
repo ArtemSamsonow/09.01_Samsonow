@@ -1,0 +1,41 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+    <ul id="ul1">
+        <li>Один</li>
+        <li>Два</li>
+        <li>Три</li>
+        <li>Четыре</li>
+      </ul>
+      <input type="text" id="i1">
+      <button id="b1">Добавить li</button>
+
+
+    <input type="button" id="input_button_bg_change" value="Жми">
+
+
+    
+    <script type="text/javascript">
+    window.onload = function() {
+        var button = document.getElementById('input_button_bg_change');
+        var body = document.getElementsByTagName('body')[0];
+        var colors = ['blue', 'grey', 'black', 'white', 'red', 'green', '#aaa', '#FFAACC', 'rgb(122,111,110)'];
+        button.onclick = function() {
+            body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        };
+    };
+    </script>
+    
+    <script>
+        document.querySelector('#b1').addEventListener('click', () => {
+        let li = document.createElement('li');
+        li.textContent = document.querySelector('#i1').value;
+        document.querySelector('#i1').value = '';
+        document.querySelector('#ul1').appendChild(li);
+    });
+    </script>
+    
+</body>
+</html>
